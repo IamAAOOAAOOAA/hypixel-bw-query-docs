@@ -1,0 +1,12 @@
+Documentation-only repository.
+
+Copyright (c) 2026 the repository owner. All rights reserved.
+
+The text in this repository is published for reference and for the purpose of describing
+the project's architecture to the platform whose API it uses. No permission is granted
+to reproduce the private components referenced by this documentation (bot implementation,
+card renderer, fonts, textures, background assets, or service configuration), which are
+not included here.
+
+Game data referenced by this project belongs to Hypixel. This project is not affiliated
+with or endorsed by Hypixel.
