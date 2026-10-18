@@ -1,3 +1,8 @@
+> ⚠️ **提交到 Dashboard 表单时请用 `APPLICATION.form.txt`，不要直接复制本文。**
+> Dashboard 描述框是字符白名单校验（实测正则），**不接受 `/` 斜杠、`<` `>` 尖括号、`*` `#` 反引号等 Markdown 标记**，直接粘贴下面的正文会报 `Description contains invalid characters`。`APPLICATION.form.txt` 是同一内容的合规纯文本版。
+>
+> 另注：本文 "API usage" 里写的 `per-user cooldown 60s + server-side cache 10min` 与当前插件实现不符（代码里只有皮肤缓存 600s，没有冷却、也没有战绩缓存）。**要么先补上缓存与冷却，要么按实际行为改写**，不要声明不存在的机制。
+
 # Hypixel Developer Dashboard — Application Text
 
 Copy the blocks below into the corresponding fields of the "Create App" form.
