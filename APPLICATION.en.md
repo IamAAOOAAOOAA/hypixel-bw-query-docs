@@ -1,7 +1,7 @@
 > ⚠️ **提交到 Dashboard 表单时请用 `APPLICATION.form.txt`，不要直接复制本文。**
 > Dashboard 描述框是字符白名单校验（实测正则），**不接受 `/` 斜杠、`<` `>` 尖括号、`*` `#` 反引号等 Markdown 标记**，直接粘贴下面的正文会报 `Description contains invalid characters`。`APPLICATION.form.txt` 是同一内容的合规纯文本版。
 >
-> 另注：本文 "API usage" 里写的 `per-user cooldown 60s + server-side cache 10min` 与当前插件实现不符（代码里只有皮肤缓存 600s，没有冷却、也没有战绩缓存）。**要么先补上缓存与冷却，要么按实际行为改写**，不要声明不存在的机制。
+> 另注（2026-10-18 已核对并补齐）：本文 "API usage" 里写的 `per-user cooldown 60s + server-side cache 10min` **现已与插件实现一致**——插件当前实现了战绩缓存（`stats_cache_ttl`，默认 600 秒）与每人 60 秒冷却（`cmd_cooldown`）。
 
 # Hypixel Developer Dashboard — Application Text
 
@@ -19,7 +19,7 @@ Replace every `<...>` placeholder. Do **not** mention any third-party cache, mir
 
 ## Description (paste this)
 
-> I am building a small chat bot for a Minecraft community. It lets a member check their own
+> I am building a small chat bot for my own small Minecraft chat group. It lets a member check their own
 > Hypixel Bed Wars statistics directly in the group chat where they already talk, without
 > visiting a third-party website.
 >
@@ -33,8 +33,8 @@ Replace every `<...>` placeholder. Do **not** mention any third-party cache, mir
 >
 > **API usage**
 > One `/v2/player` request per user command. A per-user cooldown of 60 seconds and a
-> server-side cache mean the same UUID is not requested again for at least 10 minutes, so a
-> busy community generates on the order of a few hundred requests per day at most. There are
+> server-side cache mean the same UUID is not requested again within that window, so repeated
+> lookups of the same player do not generate additional requests. There are
 > no scheduled jobs and no background polling: if nobody runs the command, the application
 > makes no requests at all.
 >
@@ -51,8 +51,8 @@ Replace every `<...>` placeholder. Do **not** mention any third-party cache, mir
 > responses are not stored or redistributed; only the rendered image is posted.
 >
 > **Other**
-> The project is non-monetized and has no paid tier. It is clearly labeled as an unofficial
-> community tool and not affiliated with or endorsed by Hypixel.
+> The project is non-monetized and has no paid tier. It is a personal, unofficial tool and is
+> not affiliated with or endorsed by Hypixel.
 
 ## If the application is rejected
 
