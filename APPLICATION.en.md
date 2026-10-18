@@ -67,7 +67,7 @@ on the information provided."* Then:
 
 ## Notes before applying
 
-- **Personal** is enough for a non-monetized community tool, including a public one.
+- **Personal** is enough for a non-monetized personal project or a small private group.
   Only pick **Production** if you monetize, run a team, or need a higher rate limit.
   Production web projects must use a domain you own (no `*.vercel.app` style subdomains).
 - Development keys are only valid for about 3 days. The long-lived key comes with the
