@@ -8,4 +8,4 @@ What it does not do. It does not keep stat history and does not perform session 
 
 Key handling. The API key is stored server-side in the bot's private configuration file. It is never sent to users, never embedded in client software, and never published in a repository. Raw API responses are not stored or redistributed, only the rendered image is posted.
 
-Other. The bot runs on my own private server and is used by me and the members of my own chat group. It is not listed, advertised, or offered as a public service. It is not affiliated with or endorsed by Hypixel.
+Other. This is a self-hosted personal project used by me and the members of my own private QQ group. It is not advertised or offered as a public service to the wider community. It is not affiliated with or endorsed by Hypixel.
