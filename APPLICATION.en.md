@@ -51,8 +51,10 @@ Replace every `<...>` placeholder. Do **not** mention any third-party cache, mir
 > responses are not stored or redistributed; only the rendered image is posted.
 >
 > **Other**
-> The project is non-monetized and has no paid tier. It is a personal, unofficial tool and is
-> not affiliated with or endorsed by Hypixel.
+> The project is non-monetized and has no paid tier. This is a self-hosted personal project used
+> by me and the members of my own private QQ group. It is not advertised or offered as a public
+> service to the wider community. It is a personal, unofficial tool and is not affiliated with
+> or endorsed by Hypixel.
 
 ## If the application is rejected
 
