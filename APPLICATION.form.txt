@@ -1,11 +1,11 @@
-I am building a small private chat bot for a Minecraft community. It lets a member check their own Hypixel Bed Wars statistics directly in the group chat where they already talk, without visiting a third-party website.
+I am building a small private chat bot for my own small Minecraft chat group. It lets a member check their own Hypixel Bed Wars statistics directly in the group chat where they already talk, without visiting a third-party website.
 
 How it works. A user sends one command containing a Minecraft username, and with no argument the bot queries the account configured as the default. The bot resolves the username to a UUID through the Mojang API and then makes a single request to the Hypixel player endpoint for that UUID, reading the Bedwars statistics object. The values are formatted into one image card that is posted back into the chat, so members only ever see the finished statistics card and never interact with the API or the API key directly.
 
-API usage. One player request per user command. There are no scheduled jobs and no background polling, so if nobody runs the command the application makes no requests at all. Total usage is proportional to how often members choose to look up a player and stays in the range of a small number of requests per active hour.
+API usage. One player request per user command. A per-user cooldown of 60 seconds and a ten-minute server-side cache mean the same player is not requested again within that window, so repeated lookups of the same player do not generate additional requests. There are no scheduled jobs and no background polling, so if nobody runs the command the application makes no requests at all.
 
 What it does not do. It does not keep stat history and does not perform session tracking, it only displays the current values returned by a single request. It does not operate as a public API service and does not provide Hypixel data to other developers or services. It does not attempt to de-anonymize players who are using the nick feature, and it does not collect data at scale.
 
 Key handling. The API key is stored server-side in the bot's private configuration file. It is never sent to users, never embedded in client software, and never published in a repository. Raw API responses are not stored or redistributed, only the rendered image is posted.
 
-Other. The bot runs on my own private server and is used by me and the members of my own QQ chat group. It is not listed, advertised, or offered as a public service. It is free to use and is not affiliated with or endorsed by Hypixel.
+Other. The bot runs on my own private server and is used by me and the members of my own chat group. It is not listed, advertised, or offered as a public service. It is not affiliated with or endorsed by Hypixel.
